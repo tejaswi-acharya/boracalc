@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24143f" />
+  <title>Boraculator 💜 | A little math, a lot of BTS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Boraculator home">
+        <span class="brand-mark">♡</span>
+        <span>BORA<span class="brand-light">CULATOR</span></span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> powered by ARMY love</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>✦</span> A LITTLE MATH, A LOT OF BTS <span>✦</span></p>
+        <h1>Make it <span>count.</span></h1>
+        <p class="hero-subtitle">Your daily calculations, wrapped in a little purple universe.</p>
+        <div class="member-stars" aria-label="Seven stars for seven members">
+          <span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+          <small>OT7, always.</small>
+        </div>
+      </div>
+
+      <section class="calculator" aria-label="BTS themed calculator">
+        <div class="calculator-top">
+          <div>
+            <div class="calc-label">YOUR PURPLE DESK</div>
+            <div class="calc-title">Boraculator <span>💜</span></div>
+          </div>
+          <button class="icon-button" id="armyButton" title="Open a little ARMY surprise" aria-label="Open ARMY surprise">✦</button>
+        </div>
+
+        <div class="display-wrap">
+          <div class="display-meta">
+            <span id="statusText">READY WHEN YOU ARE</span>
+            <button id="historyToggle" class="history-toggle" type="button">HISTORY ↗</button>
+          </div>
+          <div class="expression" id="expression" aria-live="polite"></div>
+          <input id="inputBox" class="display" type="text" value="0" readonly aria-label="Calculator display" />
+        </div>
+
+        <div class="keypad" id="keypad">
+          <button class="key utility" data-action="clear">AC</button>
+          <button class="key utility" data-action="delete" aria-label="Delete last character">⌫</button>
+          <button class="key utility" data-value="%">%</button>
+          <button class="key operator" data-value="÷">÷</button>
+
+          <button class="key" data-value="7">7</button>
+          <button class="key" data-value="8">8</button>
+          <button class="key" data-value="9">9</button>
+          <button class="key operator" data-value="×">×</button>
+
+          <button class="key" data-value="4">4</button>
+          <button class="key" data-value="5">5</button>
+          <button class="key" data-value="6">6</button>
+          <button class="key operator" data-value="−">−</button>
+
+          <button class="key" data-value="1">1</button>
+          <button class="key" data-value="2">2</button>
+          <button class="key" data-value="3">3</button>
+          <button class="key operator" data-value="+">+</button>
+
+          <button class="key utility" data-action="sign">±</button>
+          <button class="key" data-value="0">0</button>
+          <button class="key" data-value=".">.</button>
+          <button class="key equals" data-action="equals">=</button>
+        </div>
+
+        <div class="calculator-bottom">
+          <span>♡ MADE WITH LOVE</span>
+          <span>OT7 FOREVER <b>✦</b></span>
+        </div>
+      </section>
+    </section>
+
+    <section class="below-grid">
+      <article class="quote-card">
+        <div class="quote-icon">“</div>
+        <div>
+          <p id="armyQuote">You never walk alone. Keep going, one step at a time.</p>
+          <span>A LITTLE REMINDER FOR YOU</span>
+        </div>
+        <button id="newQuote" class="refresh-button" title="New message" aria-label="Show another message">↻</button>
+      </article>
+      <article class="mini-card">
+        <div class="mini-icon">✧</div>
+        <div><strong>Seven stars.</strong><span>One purple universe.</span></div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>Made with logic, love & a little too much BTS obsession.</p>
+      <button id="footerArmy" type="button">Proud ARMY. Forever OT7. <span>💜</span></button>
+    </footer>
+  </main>
+
+  <aside class="history-panel" id="historyPanel" aria-hidden="true">
+    <div class="history-header">
+      <div><span class="eyebrow">YOUR PURPLE DESK</span><h2>Recent sums</h2></div>
+      <button id="closeHistory" class="close-button" aria-label="Close history">×</button>
+    </div>
+    <div id="historyList" class="history-list"><p class="empty-history">Your calculations will appear here.</p></div>
+    <button id="clearHistory" class="clear-history">CLEAR HISTORY</button>
+  </aside>
+  <div class="panel-backdrop" id="panelBackdrop"></div>
+
+  <div class="modal-backdrop" id="armyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="army-modal">
+      <button id="closeModal" class="close-button modal-close" aria-label="Close">×</button>
+      <div class="modal-sparkle">✦ ✧ ✦</div>
+      <div class="modal-heart">💜</div>
+      <p class="eyebrow">A MESSAGE FROM YOUR PURPLE UNIVERSE</p>
+      <h2 id="modalTitle">You found the ARMY corner!</h2>
+      <p>Seven members, one family, and a little calculator made with love. Borahae!</p>
+      <div class="music-player">
+        <div class="music-heading">
+          <span class="music-note">♫</span>
+          <div>
+            <strong>Magic Shop</strong>
+            <span id="musicStatus">Choose your copy to play it here</span>
+          </div>
+        </div>
+        <audio id="armyMusic" controls preload="metadata" aria-label="Magic Shop music player"></audio>
+        <label class="music-upload">
+          <span>＋ Add audio file</span>
+          <input id="musicFile" type="file" accept="audio/*" />
+        </label>
+      </div>
+      <div class="modal-signoff">Made by a proud ARMY · OT7 always</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
